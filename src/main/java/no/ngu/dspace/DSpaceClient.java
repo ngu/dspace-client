@@ -1,4 +1,12 @@
 package no.ngu.dspace;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import no.ngu.dspace.model.Collection;
+import no.ngu.dspace.model.Community;
+import no.ngu.dspace.model.Item;
+
 /**
  * https://wiki.lyrasis.org/display/DSDOC6x/REST+API
  */
