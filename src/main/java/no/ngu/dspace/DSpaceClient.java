@@ -27,8 +27,8 @@ public class DSpaceClient {
     }
 
     public List<Item> getItemsByCommunitiy(Community community) {
-        Item item = new Item();
-        return item;
+        List<Item> items = new ArrayList<Item>();
+        return items;
     }
 
 }
