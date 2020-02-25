@@ -11,8 +11,8 @@ public class GsonCreator {
     public static GsonBuilder builder() {
         GsonBuilder builder = new GsonBuilder();
         // can not use setDateFormat as this need to be UTC
-        builder.registerTypeAdapter(java.sql.Date.class, new ISODateAdapter());
-        builder.registerTypeAdapter(Date.class, new ISOTimestampAdapter());
+        //builder.registerTypeAdapter(java.sql.Date.class, new ISODateAdapter());
+        //builder.registerTypeAdapter(Date.class, new ISOTimestampAdapter());
         return builder;
     }
 

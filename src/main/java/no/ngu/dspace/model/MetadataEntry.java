@@ -8,6 +8,18 @@ public class MetadataEntry {
     private String value;
     private String language;
 
+    public MetadataEntry(){};
+
+    public MetadataEntry(String key, String value) {
+        this.key=key;
+        this.value = value;
+    }
+    public MetadataEntry(String key, String value, String language) {
+        this.key=key;
+        this.value = value;
+        this.language = language;
+    }
+
     public String getKey() {
         return key;
     }

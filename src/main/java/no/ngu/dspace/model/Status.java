@@ -2,27 +2,33 @@ package no.ngu.dspace.model;
 
 /**
  * https://wiki.lyrasis.org/display/DSDOC5x/REST+API#RESTAPI-Model-Objectdatatypes
+ * Simplified from:
+ * https://github.com/DSpace/DSpace/blob/master/dspace-rest/src/main/java/org/dspace/rest/common/Status.java
  */
 public class Status {
-    private String okay;
-    private String authenticated;
+    private boolean okay;
+    private boolean authenticated;
     private String email;
     private String fullname;
-    private String token;
+    private String sourceVersion;
+    private String apiVersion;
 
-    public String getOkay() {
+    public boolean getOkay() {
         return okay;
     }
-
-    public void setOkay(String okay) {
+    public boolean isOkay() {return okay;}
+    public void setOkay(boolean okay) {
         this.okay = okay;
     }
 
-    public String getAuthenticated() {
+    public boolean getAuthenticated() {
+        return authenticated;
+    }
+    public boolean isAuthenticated() {
         return authenticated;
     }
 
-    public void setAuthenticated(String authenticated) {
+    public void setAuthenticated(boolean authenticated) {
         this.authenticated = authenticated;
     }
 
@@ -42,11 +48,19 @@ public class Status {
         this.fullname = fullname;
     }
 
-    public String getToken() {
-        return token;
+    public String getApiVersion() {
+        return apiVersion;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
+    }
+
+    public String getSourceVersion() {
+        return sourceVersion;
+    }
+
+    public void setSourceVersion(String sourceVersion) {
+        this.sourceVersion = sourceVersion;
     }
 }

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Bitstream {
-    private int id;
+    private String uuid;
     private String name;
     private String type = "bitstream";
     private String link = "";
@@ -20,12 +20,12 @@ public class Bitstream {
     private int sequenceId;
     private String policies = null;
 
-    public int getId() {
-        return id;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getName() {

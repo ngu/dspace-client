@@ -5,16 +5,16 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * https://wiki.lyrasis.org/display/DSDOC5x/REST+API#RESTAPI-Model-Objectdatatypes
+ * https://wiki.lyrasis.org/display/DSDOC6x/REST+API#RESTAPI-Model-Objectdatatypes
  */
 public class Item {
-    private int id;
-    private String name;
-    private String handle;
+    private String uuid;
+    private String name = null;
+    private String handle = null;
     private String type = "item";
-    private String link = "";
+    private String link = null; // relative to rest-endpoint
     private List<String> expand = new ArrayList<String>(Arrays.asList("metadata", "parentCollection", "parentCollectionList", "parentCommunityList", "bitstreams", "all"));
-    private String lastModified = "";
+    private String lastModified = null;
     private Collection parentCollection = null;
     private List<Collection> parentCollectionList = null;
     private List<Community> parentCommunityList = null;
@@ -22,12 +22,12 @@ public class Item {
     private String archived;
     private String withdrawn;
 
-    public int getId() {
-        return id;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getName() {
