@@ -18,7 +18,7 @@ import java.util.List;
 
 public class DSpaceClientTester  extends TestCase {
     private final String endPoint = "https://localhost:8080/rest/";
-    private final String username = "admin";
+    private final String username = "changeThisBeforeRunningTest";
     private final String password = "changeThisBeforeRunningTest";
 
     public void testRestAvailable() throws Exception {
