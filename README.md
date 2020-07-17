@@ -10,7 +10,8 @@ A known limitation of DSpace v6 REST-api is that you cannot HTTP PUT (e.g. Updat
    Q: What does this mean in practice? 
    
    A: If you want to programmatically withdraw an Item, this is not possible using dspace-rest.
-      You must open the Item in xmlui, Edit Item, Click Withdraw and then confirm Withdraw.
+      You must open the Item in xmlui, Edit Item, Click Withdraw and then confirm Withdraw. Or, if you control your own instance of DSpace, you 
+      could do those operations using sql-scripts.
    
 Of course, you could always use the delete-method to delete an Item, but if there are harvesters connected to your
 DSpace instance, they won't get notice that the Item has gone if you use delete rather than Withdraw.
