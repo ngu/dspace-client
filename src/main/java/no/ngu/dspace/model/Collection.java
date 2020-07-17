@@ -8,7 +8,7 @@ import java.util.List;
  * https://wiki.lyrasis.org/display/DSDOC5x/REST+API#RESTAPI-Model-Objectdatatypes
  */
 public class Collection {
-    private String UUID;
+    private String uuid;
     private String name;
     private String handle;
     private String type = "collection";
@@ -25,12 +25,12 @@ public class Collection {
     private String sidebarText = "";
     private int numberItems = getItems().size();
 
-    public String getUUID() {
-        return UUID;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setId(String UUID) {
-        this.UUID = UUID;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getName() {
