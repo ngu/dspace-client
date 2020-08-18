@@ -16,6 +16,7 @@ import no.ngu.dspace.utils.GsonCreator;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.Header;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 
 import org.apache.http.NameValuePair;
@@ -31,6 +32,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.cookie.BasicClientCookie;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 
 /**
  * This client works on the DSPACE v6.x REST-API
@@ -242,17 +244,18 @@ public class DSpaceClient {
      * @throws IOException
      */
     private boolean httpDelete(String url) throws IOException {
-        HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpDelete request = new HttpDelete(url);
         if (JSESSIONID != null) {
-            conn.addRequestProperty("Cookie","JSESSIONID="+JSESSIONID);
+            request.addHeader("Cookie","JSESSIONID="+this.JSESSIONID);
         }
-        conn.setRequestMethod("DELETE");
-        conn.setRequestProperty("accept", ACCEPT_HEADER);
-        if (conn.getResponseCode() != 200) {
-            throw new IOException(
-                    "DELETE got " + conn.getResponseCode() + " " + conn.getResponseMessage() + " from " + url);
+        HttpResponse response = httpclient.execute(request);
+        int status = response.getStatusLine().getStatusCode();
+        if (status >= 200 && status < 300) {
+            return true;
+        } else {
+            return false;
         }
-        return true;
     }
 
 
