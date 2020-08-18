@@ -450,6 +450,15 @@ public class DSpaceClient {
     }
 
     /**
+     * Delete Metadata on Item
+     */
+    public boolean removeItemMetadata(Item item) throws Exception {
+        String url = String.format("%s/%s/metadata",getUrl(ACTION_ITEMS),item.getUuid());
+        boolean deleted = httpDelete(url);
+        return deleted;
+    }
+
+    /**
      * Add Item with Metadata
      * @param item
      * @param collection
